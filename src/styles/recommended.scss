@@ -1,0 +1,93 @@
+.recommended {
+  padding-top: 48px;
+
+  @include tablet {
+    padding-top: 120px;
+  }
+
+  &__container {
+    padding-inline: $padding-page-tablet;
+  }
+
+  &__title {
+    font-size: $h2-size;
+    line-height: $text-l-h-medium;
+    padding-bottom: 48px;
+
+    @include tablet {
+      font-size: $h2-size-tablet;
+      line-height: $text-l-h-medium-tablet;
+      padding-bottom: 56px;
+    }
+
+    @include desktop {
+      font-size: $h1-size-tablet;
+      line-height: $h1-size-tablet;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $cards-gap;
+
+    @include tablet {
+      gap: 56px;
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  transition: transform $transition;
+
+  &:hover {
+    transform: scale($scale) translateY(-10px);
+  }
+
+  &__image {
+    margin-bottom: 24px;
+
+    @include tablet {
+      display: block;
+      width: 600px;
+    }
+
+    @include desktop {
+      width: 324px;
+    }
+  }
+
+  &__name {
+    margin-bottom: 8px;
+    font-size: $font-size-large;
+    line-height: $text-l-h;
+  }
+
+  &__description {
+    margin-bottom: 12px;
+    font-weight: $fw-4;
+    font-size: $font-size-small;
+    line-height: $text-l-h;
+
+    @include tablet {
+      margin-bottom: 34px;
+      font-size: $font-size-medium;
+    }
+
+    @include desktop {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__price {
+    font-size: $font-size-medium;
+    font-weight: $fw-7;
+    line-height: $text-l-h;
+  }
+}

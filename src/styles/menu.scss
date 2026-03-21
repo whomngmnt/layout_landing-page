@@ -1,0 +1,153 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  height: 100vh;
+  width: 100%;
+  background-color: $bcg-color-menu;
+
+  right: 0;
+  transform: translateX(100%);
+  transition: $transition;
+
+  &--open {
+    transform: translateX(0);
+  }
+
+  &--close {
+    width: 20px;
+    height: 20px;
+    background-image: url(/src/images/header/menu-close.png);
+    background-size: contain;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__container {
+    padding-inline: $padding-page;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include tablet {
+      padding-top: 15px;
+      padding-inline: $padding-page-tablet;
+    }
+
+    @include desktop {
+      padding-inline: $padding-page-desktop;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    margin-top: 28px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__link {
+    font-size: $font-size-big;
+    font-weight: $fw-7;
+    text-decoration: none;
+    color: $btn-color-hover;
+    position: relative;
+
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 48%;
+        height: 1px;
+        background-color: $btn-color-hover;
+      }
+    }
+
+    @include tablet {
+      line-height: $font-size-big;
+    }
+
+    @include desktop {
+      line-height: $font-size-big;
+      font-size: $font-size-big;
+    }
+  }
+
+  &__bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @include tablet {
+      gap: 16px;
+    }
+  }
+
+  &__phone {
+    text-decoration: none;
+    color: $btn-color-hover;
+    font-size: $font-size-medium;
+    font-weight: $fw-7;
+    letter-spacing: 2px;
+    transition: color $transition;
+
+    &:hover {
+      color: $btn-color-primary;
+    }
+
+    @include tablet {
+      line-height: $text-l-h;
+    }
+  }
+
+  &__btn--call {
+    text-decoration: none;
+    color: $btn-color-hover;
+    font-size: $font-size-medium;
+    font-weight: $fw-7;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 48%;
+      height: 1px;
+      background-color: $btn-color-hover;
+
+      @include tablet {
+        width: 24%;
+      }
+
+      @include desktop {
+        width: 13%;
+      }
+    }
+  }
+}

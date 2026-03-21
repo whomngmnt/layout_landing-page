@@ -1,0 +1,139 @@
+.header {
+  height: 100vh;
+
+  background-image: url('/src/images/header/header-background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: $padding-page;
+    padding-top: 24px;
+
+    @include tablet {
+      padding-top: 36px;
+      padding-inline: $padding-page-tablet;
+    }
+
+    @include desktop {
+      padding-inline: $padding-page-desktop;
+    }
+  }
+
+  &__logo {
+    transition: transform $transition;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale($scale);
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+
+    @include tablet {
+      gap: 32px;
+    }
+  }
+
+  &__title {
+    padding-left: $padding-page;
+    padding-bottom: 15px;
+    max-width: 280px;
+    font-size: $h1-size;
+    line-height: 100%;
+    color: $text-color;
+
+    @include tablet {
+      padding-left: $padding-page-tablet;
+      font-size: $h1-size-tablet;
+      max-width: 380px;
+      padding-bottom: 64px;
+    }
+
+    @include desktop {
+      padding-left: $padding-page-desktop;
+
+      $h1-size-desktop: 56px;
+
+      max-width: 380px;
+    }
+  }
+}
+
+.icon__number {
+  font-size: $font-size-small;
+  font-weight: $fw-7;
+  color: $text-form-color;
+  white-space: nowrap;
+  margin-left: 45px;
+
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  transition: $transition;
+  pointer-events: none;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  width: $header-icon-size;
+  height: $header-icon-size;
+  background-size: contain;
+  text-decoration: none;
+  transition: $transition;
+  cursor: pointer;
+
+  @include tablet {
+    width: 32px;
+    height: 32px;
+  }
+
+  &--phone {
+    background-image: url('/src/images/header/Icon-Phone-call.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: auto;
+    min-width: $header-icon-size;
+    display: flex;
+    align-items: center;
+
+    &:hover,
+    &:active,
+    &:focus {
+      .icon__number {
+        opacity: 1;
+        max-width: 200px;
+        margin-right: 45px;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &--menu {
+    background-image: url('/src/images/header/Icon-Burger-menu.png');
+    cursor: pointer;
+    transition: background-image $transition;
+
+    &:hover {
+      background-image: url(/src/images/header/Icon-Burger-menu-hover.png);
+    }
+  }
+}

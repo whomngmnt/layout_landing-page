@@ -1,0 +1,172 @@
+.contact {
+  margin-top: 64px;
+
+  @include tablet {
+    margin-top: 120px;
+  }
+
+  &__container {
+    padding-inline: $padding-page;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+
+    @include tablet {
+      padding-inline: $padding-page-tablet;
+    }
+
+    @include desktop {
+      padding-inline: $padding-page-desktop;
+      grid-template-columns: 600px 1fr;
+      gap: 120px;
+      align-items: flex-start;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: $fw-7;
+    font-size: $h2-size;
+    line-height: $text-l-h-medium;
+
+    @include tablet {
+      font-size: $h2-size-tablet;
+      line-height: 100%;
+    }
+
+    @include desktop {
+      font-size: $h1-size-tablet;
+      line-height: $h1-size-tablet;
+    }
+  }
+
+  &__form {
+    display: grid;
+    gap: 16px;
+    margin-top: $mg-top-form;
+    outline: none;
+  }
+
+  &__info {
+    display: grid;
+    gap: 24px;
+    margin-top: $mg-top-form;
+
+    @include desktop {
+      margin-top: 105px;
+    }
+  }
+
+  &__label {
+    font-weight: $fw-4;
+    font-size: 14px;
+    line-height: $text-l-h;
+    color: $text-color-secondary;
+    margin-bottom: 8px;
+  }
+
+  &__value {
+    font-weight: $fw-4;
+    font-size: $font-size-medium;
+    line-height: $text-l-h;
+    letter-spacing: 0.15px;
+    text-decoration: none;
+    color: $text-color-address;
+    max-width: 10px;
+    transition: color $transition;
+
+    &:hover {
+      color: $btn-color-primary;
+    }
+  }
+
+  &__address {
+    font-style: normal;
+    max-width: 130px;
+    margin-bottom: 64px;
+    transition: color $transition;
+    text-decoration: none;
+    color: $text-color-address;
+
+    &:visited {
+      color: $text-color-address;
+    }
+    &:hover {
+      color: $btn-color-primary;
+    }
+
+    @include tablet {
+      margin-bottom: 120px;
+    }
+  }
+}
+
+.form__input {
+  padding: 14px 16px;
+  border-radius: $br-form;
+  border: 1px solid #f9f9f9;
+  width: 280px;
+  height: 48px;
+  background-color: #f9f9f9;
+  font-family: inherit;
+  outline: none;
+  transition: border-color $transition;
+
+  @include tablet {
+    width: 600px;
+    height: 48px;
+  }
+
+  &:hover {
+    border-color: $br-color-form-hov;
+  }
+
+  &:focus {
+    border-color: $btn-color-primary;
+  }
+
+  &--textarea {
+    width: 280px;
+    height: 148px;
+    border-radius: $br-form;
+    padding: 14px 16px;
+    resize: none;
+    font-family: inherit;
+
+    @include tablet {
+      width: 600px;
+    }
+  }
+}
+
+.form__button {
+  font-size: $font-size-medium;
+  font-weight: $fw-7;
+  line-height: 27px;
+  border-radius: $br-form;
+  background-color: $btn-color-primary;
+  color: $text-color;
+  width: 100%;
+  padding-bottom: 14px;
+  padding-top: 14px;
+  transition: background-color $transition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $btn-color-hover;
+  }
+
+  &:focus {
+    background-color: $btn-color-pressed;
+  }
+
+  border: none;
+
+  @include desktop {
+    margin-bottom: 120px;
+  }
+}
