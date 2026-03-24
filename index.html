@@ -6,17 +6,360 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Landing Page</title>
+    <title>B&O</title>
+    <link rel="icon" type="image/png"
+    href="images/header/logo.png">
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
-      href="src/styles/main.scss"
+      href="src/styles/styles.scss"
     />
     <script
       src="src/scripts/main.js"
       defer
     ></script>
   </head>
-  <body>
-    <h1>Landing Page</h1>
+
+  <body class="page">
+    <aside class="menu">
+      <div class="menu__container">
+        <div class="menu__top">
+          <a
+            href="#header"
+            class="menu__logo"
+          >
+            <img
+              src="src/images/header/logo.png"
+              alt="Bose logo"
+            />
+          </a>
+          <button class="menu--close"></button>
+        </div>
+
+        <div class="menu__bottom">
+          <div class="menu__nav">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a
+                  href="#recommended"
+                  class="menu__link"
+                >
+                  Recommended
+                </a>
+              </li>
+              <li class="menu__item">
+                <a
+                  href="#categories"
+                  class="menu__link"
+                >
+                  Categories
+                </a>
+              </li>
+              <li class="menu__item">
+                <a
+                  href="#about"
+                  class="menu__link"
+                >
+                  About Us
+                </a>
+              </li>
+              <li class="menu__item">
+                <a
+                  href="#contact"
+                  class="menu__link"
+                >
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu__contacts">
+            <a
+              href="tel:+12345555555"
+              class="menu__phone"
+            >
+              +1 234 5555-55-55
+            </a>
+
+            <a
+              href="tel:+12345555555"
+              class="menu__btn--call"
+            >
+              call to order
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <header class="header" id="header">
+      <div class="header__top">
+        <a
+          href="#"
+          class="header__logo"
+        >
+          <img
+            src="src/images/header/logo.png"
+            alt="Bose logo"
+          />
+        </a>
+
+        <div class="header__icons">
+          <a
+            href="tel:+1 234 555-55-55"
+            class="icon icon--phone"
+          >
+            <span class="icon__number">+1 234 555-55-55</span>
+          </a>
+
+          <a
+            href="#"
+            class="icon icon--menu"
+          ></a>
+        </div>
+      </div>
+
+      <h1 class="header__title">Your senses. Set free.</h1>
+    </header>
+
+    <section
+      class="recommended"
+      id="recommended"
+    >
+      <div class="recommended__container">
+        <h2 class="recommended__title">Recommended</h2>
+
+        <div class="recommended__list">
+          <article class="product-card">
+            <a href="#" class="product-card__image-wrapper">
+              <img
+                class="product-card__image"
+                src="src/images/list/besound-5.png"
+                alt="Beosound A5"
+              />
+            </a>
+
+            <h3 class="product-card__name">BEOSOUND A5</h3>
+            <p class="product-card__description">
+              Huge sound anywhere – in the home or outdoors. Beosound A5 is a
+              Wi-Fi and Bluetooth speaker with long-lasting battery and wireless
+              charging built in.
+            </p>
+            <div class="product-card__price">$ 1299.00</div>
+          </article>
+
+          <article class="product-card">
+            <a href="#" class="product-card__image-wrapper">
+              <img
+                class="product-card__image"
+                src="src/images/list/BEOPLAYHX.png"
+                alt="BEOPLAY HX"
+              />
+            </a>
+
+            <h3 class="product-card__name">BEOPLAY HX</h3>
+            <p class="product-card__description">
+              Wireless noise-cancelling headphones. Listen in comfort whether
+              you're on a call, working from home or taking a moment for
+              yourself.
+            </p>
+            <div class="product-card__price">$ 499.00</div>
+          </article>
+
+          <article class="product-card">
+            <a href="#" class="product-card__image-wrapper">
+              <img
+                class="product-card__image"
+                src="src/images/list/BEOSOUND THEATRE.png"
+                alt="BEOSOUND THEATRE"
+              />
+            </a>
+
+            <h3 class="product-card__name">BEOSOUND THEATRE</h3>
+            <p class="product-card__description">
+              Four patent-pending acoustic innovations in one sleek soundbar
+              envelop you in sound from every angle. Made to fit any TV, and
+              last for generations.
+            </p>
+            <div class="product-card__price">$ 3199.00</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="categories"
+      id="categories"
+    >
+      <div class="categories__container">
+        <h2 class="categories__title">Sound. Vision. It’s your pick.</h2>
+
+        <div class="categories__list">
+          <article class="category-item">
+            <div class="category-item__gallery">
+              <a href="#" class="category-item__img-wrapper">
+                <img
+                  src="src/images/categories/categories-1.png"
+                  alt="Portable speakers"
+                />
+              </a>
+              <a href="#" class="category-item__img-wrapper">
+                <img
+                  src="src/images/categories/categories-1.1.png"
+                  alt="Portable speakers"
+                />
+              </a>
+            </div>
+            <h3 class="category-item__title">Portable speakers</h3>
+          </article>
+
+          <article class="category-item">
+            <div class="category-item__gallery">
+              <a href="#" class="category-item__img-wrapper">
+                <img
+                  src="src/images/categories/categories-2.png"
+                  alt="Earphones"
+                />
+              </a>
+              <a href="#" class="category-item__img-wrapper">
+                <img
+                  src="src/images/categories/categories-2.1.png"
+                  alt="Earphones"
+                />
+              </a>
+            </div>
+            <h3 class="category-item__title">Earphones</h3>
+          </article>
+
+          <article class="category-item">
+            <div class="category-item__gallery">
+              <a href="#" class="category-item__img-wrapper">
+                <img
+                  src="src/images/categories/categories-3.png"
+                  alt="Smart Home"
+                />
+              </a>
+              <a href="#" class="category-item__img-wrapper">
+                <img
+                  src="src/images/categories/categories-3.1.png"
+                  alt="Smart Home"
+                />
+              </a>
+            </div>
+            <h3 class="category-item__title">Smart Home</h3>
+          </article>
+        </div>
+        <a
+          href="#"
+          class="button button--primary"
+        >
+          View all
+        </a>
+      </div>
+    </section>
+
+    <section
+      class="about"
+      id="about"
+    >
+      <div class="about__image-wrapper">
+        <img
+          src="src/images/about/about.png"
+          alt="Vantage player"
+          class="about__img"
+        />
+      </div>
+      <div class="container about__container">
+        <h2 class="about__title">Timeless, for 50 years and counting</h2>
+        <p class="about__description">
+          Bang & Olufsen is expanding its Recreated Classics Program with the
+          launch of Beosystems – a limited edition music system that transcends
+          time by bridging the gap between one of our iconic designs from 1972
+          and today’s cutting-edge digital technology.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="contact"
+      id="contact"
+    >
+      <div class="contact__container">
+        <div class="contact__main">
+          <h2 class="contact__title">Contact us</h2>
+          <form class="contact__form"
+          onsubmit="this.reset(); return false;">
+            <input
+              type="text"
+              class="form__input"
+              placeholder="Name"
+              required
+            />
+            <input
+              type="email"
+              class="form__input"
+              placeholder="Email"
+              required
+            />
+            <textarea
+              class="form__input form__input--textarea"
+              placeholder="I'd like to ask about..."
+            ></textarea>
+            <button
+              type="submit"
+              class="form__button"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+
+        <div class="contact__info">
+          <div class="contact__item">
+            <div class="contact__label">Phone</div>
+            <a
+              href="tel:+12345555555"
+              class="contact__value"
+            >
+              +1 234 555-55-55
+            </a>
+          </div>
+
+          <div class="contact__item">
+            <div class="contact__label">Email</div>
+            <a
+              href="mailto:hello@bang-olufsen.com"
+              class="contact__value"
+            >
+              hello@bang-olufsen.com
+            </a>
+          </div>
+
+          <address class="contact__address">
+            <div class="contact__label">Address</div>
+            <a class="contact__address"
+            href="https://www.google.com/maps/search/?api=1&query=400+first+ave.+suite+700+Minneapolis+MN+55401"
+            target="_blank"
+            rel="noopener noreferrer">
+
+                400 first ave. suite 700 Minneapolis, MN 55401
+
+            </a>
+          </address>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
