@@ -6,28 +6,63 @@ html {
   scroll-behavior: smooth;
 }
 
-.page,
-html,
+body,
 h1,
 h2,
 h3,
-p {
-  font-family: Manrope, sans-serif;
+p,
+ul {
   margin: 0;
-  padding: 0;
-  color: $btn-color-hover;
 }
 
-h1,
-h2,
-h3 {
-  font-weight: 700;
-  color: $btn-color-hover;
+ul {
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 a,
 button,
 input,
 textarea {
-  transition: 300ms;
+  font: inherit;
+  transition: all $transition ease;
+}
+
+.page {
+  min-width: 320px;
+  margin: 0;
+  font-family: Manrope, sans-serif;
+  color: $btn-color-hover;
+  background-color: $text-color;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}
+
+.page__content {
+  overflow: hidden;
+}
+
+.container {
+  padding-inline: $padding-page;
+
+  @include tablet {
+    padding-inline: $padding-page-tablet;
+  }
+
+  @include desktop {
+    padding-inline: $padding-page-desktop;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-weight: $fw-7;
+  color: $btn-color-hover;
 }

@@ -1,153 +1,148 @@
 .menu {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 100;
-  height: 100vh;
-  width: 100%;
   background-color: $bcg-color-menu;
-
-  right: 0;
+  overflow: auto;
+  opacity: 0;
+  pointer-events: none;
   transform: translateX(100%);
-  transition: $transition;
+  transition: all $transition ease;
 
-  &--open {
+  &:target {
+    opacity: 1;
+    pointer-events: auto;
     transform: translateX(0);
   }
 
-  &--close {
-    width: 20px;
-    height: 20px;
-    background-image: url(/src/images/header/menu-close.png);
-    background-size: contain;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-  }
-
   &__container {
-    padding-inline: $padding-page;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 48px;
 
     @include tablet {
-      padding-top: 15px;
-      padding-inline: $padding-page-tablet;
-    }
-
-    @include desktop {
-      padding-inline: $padding-page-desktop;
+      padding-top: 32px;
+      padding-bottom: 64px;
     }
   }
 
   &__top {
+    position: sticky;
+    top: 0;
+    z-index: 1;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 60px;
-    margin-top: 28px;
-  }
-
-  &__list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  &__link {
-    font-size: $font-size-big;
-    font-weight: $fw-7;
-    text-decoration: none;
-    color: $btn-color-hover;
-    position: relative;
-
-    &:hover {
-      &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 48%;
-        height: 1px;
-        background-color: $btn-color-hover;
-      }
-    }
+    justify-content: space-between;
+    padding-bottom: 24px;
+    background-color: $bcg-color-menu;
 
     @include tablet {
-      line-height: $font-size-big;
+      padding-bottom: 32px;
     }
+  }
 
-    @include desktop {
-      line-height: $font-size-big;
-      font-size: $font-size-big;
+  &__logo {
+    display: inline-flex;
+    transition: transform $transition ease;
+
+    &:hover {
+      transform: scale($scale);
+    }
+  }
+
+  &__close {
+    width: 24px;
+    height: 24px;
+    background-image: url('/src/images/header/menu-close.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include tablet {
+      width: 32px;
+      height: 32px;
     }
   }
 
   &__bottom {
-    margin-top: auto;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
+    list-style: none;
   }
 
-  &__contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-
-    @include tablet {
-      gap: 16px;
-    }
-  }
-
-  &__phone {
-    text-decoration: none;
-    color: $btn-color-hover;
-    font-size: $font-size-medium;
-    font-weight: $fw-7;
-    letter-spacing: 2px;
-    transition: color $transition;
-
-    &:hover {
-      color: $btn-color-primary;
-    }
-
-    @include tablet {
-      line-height: $text-l-h;
-    }
-  }
-
-  &__btn--call {
-    text-decoration: none;
-    color: $btn-color-hover;
-    font-size: $font-size-medium;
-    font-weight: $fw-7;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-
+  &__link {
     position: relative;
-    display: inline-block;
-    padding-bottom: 2px;
+    width: fit-content;
+    font-size: $font-size-big;
+    font-weight: $fw-7;
+    line-height: 1;
+    color: $btn-color-hover;
+    text-decoration: none;
 
     &::after {
       content: '';
       position: absolute;
+      right: 0;
+      bottom: -8px;
       left: 0;
-      bottom: 0;
-      width: 48%;
       height: 1px;
       background-color: $btn-color-hover;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform $transition ease;
+    }
 
-      @include tablet {
-        width: 24%;
-      }
+    &:hover::after,
+    &:focus::after {
+      transform: scaleX(1);
+    }
+  }
 
-      @include desktop {
-        width: 13%;
-      }
+  &__contacts {
+    display: grid;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  &__phone,
+  &__btn-call {
+    width: fit-content;
+    font-size: $font-size-medium;
+    font-weight: $fw-7;
+    line-height: $text-l-h;
+    letter-spacing: 2px;
+    color: $btn-color-hover;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $btn-color-primary;
+    }
+  }
+
+  &__btn-call {
+    position: relative;
+    padding-bottom: 8px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background-color: currentColor;
     }
   }
 }

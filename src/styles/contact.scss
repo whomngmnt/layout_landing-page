@@ -6,30 +6,19 @@
   }
 
   &__container {
-    padding-inline: $padding-page;
     display: grid;
-    grid-template-columns: 1fr;
     gap: 48px;
-
-    @include tablet {
-      padding-inline: $padding-page-tablet;
-    }
+    padding-bottom: 64px;
 
     @include desktop {
-      padding-inline: $padding-page-desktop;
-      grid-template-columns: 600px 1fr;
-      gap: 120px;
-      align-items: flex-start;
+      grid-template-columns: minmax(0, 600px) minmax(0, 1fr);
+      gap: 111px;
+      align-items: start;
+      padding-bottom: 120px;
     }
-  }
-
-  &__main {
-    display: flex;
-    flex-direction: column;
   }
 
   &__title {
-    font-weight: $fw-7;
     font-size: $h2-size;
     line-height: $text-l-h-medium;
 
@@ -48,7 +37,6 @@
     display: grid;
     gap: 16px;
     margin-top: $mg-top-form;
-    outline: none;
   }
 
   &__info {
@@ -57,27 +45,26 @@
     margin-top: $mg-top-form;
 
     @include desktop {
-      margin-top: 105px;
+      margin-top: 88px;
     }
   }
 
   &__label {
-    font-weight: $fw-4;
+    margin-bottom: 8px;
     font-size: 14px;
+    font-weight: $fw-4;
     line-height: $text-l-h;
     color: $text-color-secondary;
-    margin-bottom: 8px;
   }
 
-  &__value {
-    font-weight: $fw-4;
+  &__value,
+  &__address-link {
     font-size: $font-size-medium;
+    font-weight: $fw-4;
     line-height: $text-l-h;
     letter-spacing: 0.15px;
-    text-decoration: none;
     color: $text-color-address;
-    max-width: 10px;
-    transition: color $transition;
+    text-decoration: none;
 
     &:hover {
       color: $btn-color-primary;
@@ -86,40 +73,16 @@
 
   &__address {
     font-style: normal;
-    max-width: 130px;
-    margin-bottom: 64px;
-    transition: color $transition;
-    text-decoration: none;
-    color: $text-color-address;
-
-    &:visited {
-      color: $text-color-address;
-    }
-    &:hover {
-      color: $btn-color-primary;
-    }
-
-    @include tablet {
-      margin-bottom: 120px;
-    }
   }
 }
 
 .form__input {
+  width: 100%;
   padding: 14px 16px;
-  border-radius: $br-form;
   border: 1px solid #f9f9f9;
-  width: 280px;
-  height: 48px;
+  border-radius: $br-form;
   background-color: #f9f9f9;
-  font-family: inherit;
   outline: none;
-  transition: border-color $transition;
-
-  @include tablet {
-    width: 600px;
-    height: 48px;
-  }
 
   &:hover {
     border-color: $br-color-form-hov;
@@ -130,30 +93,21 @@
   }
 
   &--textarea {
-    width: 280px;
-    height: 148px;
-    border-radius: $br-form;
-    padding: 14px 16px;
+    min-height: 148px;
     resize: none;
-    font-family: inherit;
-
-    @include tablet {
-      width: 600px;
-    }
   }
 }
 
 .form__button {
+  width: 100%;
+  padding-block: 14px;
+  border: none;
+  border-radius: $br-form;
   font-size: $font-size-medium;
   font-weight: $fw-7;
   line-height: 27px;
-  border-radius: $br-form;
-  background-color: $btn-color-primary;
   color: $text-color;
-  width: 100%;
-  padding-bottom: 14px;
-  padding-top: 14px;
-  transition: background-color $transition;
+  background-color: $btn-color-primary;
   cursor: pointer;
 
   &:hover {
@@ -162,11 +116,5 @@
 
   &:focus {
     background-color: $btn-color-pressed;
-  }
-
-  border: none;
-
-  @include desktop {
-    margin-bottom: 120px;
   }
 }

@@ -1,23 +1,19 @@
 .recommended {
-  padding-top: 48px;
+  padding-top: 64px;
 
   @include tablet {
     padding-top: 120px;
   }
 
-  &__container {
-    padding-inline: $padding-page-tablet;
-  }
-
   &__title {
+    margin-bottom: 48px;
     font-size: $h2-size;
     line-height: $text-l-h-medium;
-    padding-bottom: 48px;
 
     @include tablet {
+      margin-bottom: 56px;
       font-size: $h2-size-tablet;
       line-height: $text-l-h-medium-tablet;
-      padding-bottom: 56px;
     }
 
     @include desktop {
@@ -28,15 +24,15 @@
 
   &__list {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: $cards-gap;
+    gap: 40px;
 
     @include tablet {
       gap: 56px;
     }
 
     @include desktop {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
     }
   }
 }
@@ -44,23 +40,20 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  transition: transform $transition;
 
-  &:hover {
-    transform: scale($scale) translateY(-10px);
+  &__image-wrapper {
+    overflow: hidden;
+    display: block;
+    margin-bottom: 24px;
   }
 
   &__image {
-    margin-bottom: 24px;
+    width: 100%;
+    transition: transform $transition ease;
+  }
 
-    @include tablet {
-      display: block;
-      width: 600px;
-    }
-
-    @include desktop {
-      width: 324px;
-    }
+  &:hover .product-card__image {
+    transform: scale($scale);
   }
 
   &__name {
@@ -71,18 +64,9 @@
 
   &__description {
     margin-bottom: 12px;
+    font-size: $font-size-medium;
     font-weight: $fw-4;
-    font-size: $font-size-small;
     line-height: $text-l-h;
-
-    @include tablet {
-      margin-bottom: 34px;
-      font-size: $font-size-medium;
-    }
-
-    @include desktop {
-      margin-bottom: 12px;
-    }
   }
 
   &__price {
