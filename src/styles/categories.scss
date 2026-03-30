@@ -60,10 +60,24 @@
   &__img-wrapper {
     overflow: hidden;
     display: block;
+    width: 130px;
+    height: 130px;
+
+    @include tablet {
+      width: 288px;
+      height: 184px;
+    }
+
+    @include desktop {
+      width: 498px;
+      height: 324px;
+    }
   }
 
   img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform $transition ease;
   }
 

@@ -12,10 +12,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     padding-top: 24px;
 
     @include tablet {
       padding-top: 36px;
+    }
+
+    @include desktop {
+      max-width: none;
+      margin: 0;
     }
   }
 
@@ -23,6 +29,7 @@
     display: flex;
     align-items: flex-end;
     flex: 1;
+    width: 100%;
     padding-bottom: 32px;
 
     @include tablet {
@@ -30,6 +37,8 @@
     }
 
     @include desktop {
+      max-width: none;
+      margin: 0;
       padding-bottom: 64px;
     }
   }
@@ -86,7 +95,7 @@
   &__number {
     overflow: hidden;
     max-width: 0;
-    margin-left: 0;
+    margin-right: 0;
     font-size: $font-size-small;
     font-weight: $fw-7;
     line-height: 1;
@@ -101,19 +110,19 @@
     min-width: $header-icon-size;
     background-image: url('/src/images/header/Icon-Phone-call.png');
     background-repeat: no-repeat;
-    background-position: left center;
+    background-position: right center;
     background-size: 24px;
-    padding-left: $header-icon-size;
+    padding-right: $header-icon-size;
 
     @include tablet {
       background-size: 32px;
-      padding-left: 32px;
+      padding-right: 32px;
     }
 
     &:hover .icon__number,
     &:focus .icon__number {
       max-width: 160px;
-      margin-left: 12px;
+      margin-right: 12px;
       opacity: 1;
     }
   }
