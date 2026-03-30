@@ -23,7 +23,6 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
-    transition: transform $transition ease;
 
     @include tablet {
       height: 400px;
@@ -32,10 +31,6 @@
     @include desktop {
       height: 460px;
     }
-  }
-
-  &__image-wrapper:hover .about__img {
-    transform: scale($scale);
   }
 
   &__container {

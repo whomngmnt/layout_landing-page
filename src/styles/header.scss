@@ -21,7 +21,7 @@
 
     @include desktop {
       max-width: none;
-      margin: 0;
+      margin-inline: 0;
     }
   }
 
@@ -38,8 +38,7 @@
 
     @include desktop {
       max-width: none;
-      margin: 0;
-      padding-bottom: 64px;
+      margin-inline: 0;
     }
   }
 

@@ -35,6 +35,11 @@
       padding-top: 32px;
       padding-bottom: 64px;
     }
+
+    @include desktop {
+      max-width: none;
+      margin-inline: 0;
+    }
   }
 
   &__top {
